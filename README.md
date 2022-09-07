@@ -34,6 +34,16 @@ Infotainment sustav napravljen sa Raspberry Pi računalom i ESP32 mikroupravlja�
 Komunikacija između Raspberry Pi računala i ESP se odvija preko UART sučelja. Način razmjene i oblik paketa je napravljen po uzoru na MSP (MultiWii Serial Protocol) koji se koristi na dronovima.  
 Radi na način request - response, gdje Raspberry Pi šalje zahtjev (request) za podatke i ESP odgovara (response) sa traženim podacima, ili ne odgovara ako je zahtjev krivog oblika.
 
+# Slike
+
+## GUI
+
+![Screenshot 1](images/1-rpm.png)
+
+## U autu
+
+![In Car 1](images/incar.jpg)
+
 # Zahvale
 
 Ovaj projekt ne bi bio moguć bez ovih ljudi:

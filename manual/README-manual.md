@@ -60,7 +60,7 @@ The full power draw with the ESP, Pi and Display on 70% brightness is around 700
 
 The ESP draws around 150 mA with the Wifi on, 70 mA when it's off. It draws less when it's running at 80 MHz, as opposed to 160.
 
-During deep sleep, the ESP draws around 150 uA (micro amps).
+During deep sleep, the ESP draws around 15 mA. With better hardware design and DC-DC converters, this value could be reduced.
 
 ## Extra notes
 
@@ -100,7 +100,7 @@ The app can be updated manually without reflashing, but it involves connecting t
 The software generalizes the car's state, and adjusts it's power consumtion accordingly.
 
 | State description                                                   | Raspberry behaviour                                             | ESP behaviour          |
-|---------------------------------------------------------------------|-----------------------------------------------------------------|------------------------|
+| ------------------------------------------------------------------- | --------------------------------------------------------------- | ---------------------- |
 | Car in sleep mode (VAN+ is off)                                     | Turned off (no power to VAN+).                                  | In deep sleep          |
 | Car is in Eco mode (battery saving). Reset when engine is turned on | Turned off.                                                     | On, running at 80 MHz  |
 | Car off and locked, but not in sleep mode yet                       | Turned off.                                                     | On, running at 80 MHz  |
@@ -120,4 +120,3 @@ On first boot, the ESP connects to Wifi once to set the time, and disconnects. O
 ## Brightness
 
 The software adjusts the display brightness according to the time of day. The transition start and end times will be exposed to the user in the future.
-
