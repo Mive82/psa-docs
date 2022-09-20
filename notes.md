@@ -176,11 +176,21 @@ Len 12, first byte is 0xD3 - Radio presets information
 
 Cd changer status for CDC emulation.
 
+<http://pinterpeti.hu/psavanbus/PSA-VAN.html#4EC>
+
+## Iden 0x5E4
+
+Potentially trip reset - have to look into it
+Request to keep +VAN alive
+
+<http://pinterpeti.hu/psavanbus/PSA-VAN.html#5E4>
+
+
 # General notes
 
 ## Packet reading
 
-- Receving a lot of data with the TSS463C does not really work, or I'm not doing it correctly.
+- Receving a lot of data with the TSS463C does not really work, or I'm not doing it correctly. (I'm not doing it correctly)
 - Will have to use a software reader (ESP32) to read packets
 - The TSS463C will still send cd changer data (and potentially other data)
 
@@ -200,6 +210,8 @@ Formula: $\frac{\text{SPEED}}{\text{RPM}} \cdot 100$
 - `3rd` - $[2.02 - 2.07]$
 - `4th` - $[2.65 - 2.73]$
 - `5th` - $[3.38 - 3.44]$
+
+Every time a gear changers, wait one second. If the value stays, change the displayed value. This is to reduce jitter.
 
 ## Car state
 
@@ -229,6 +241,13 @@ The settings menu for my car isn't broadcast properly, so I'm doing it manually.
 The following message appeares when the audio settings button is "let go"
 
 `8A 22 56` with iden `0x8C4`
+
+## Trip computer
+
+Both trip meters are updated at the same time, the MFD chooses which one to display.
+They are probably reset with a `0x5E4` packet.
+The trip meters are sent regardless of the MFD type, but it must be present because it asks for that information from the BSI.
+(Or I could ask for that info from the BSI myself)
 
 # Other notes
 
@@ -315,6 +334,13 @@ void loop()
 
 # Yocto
 
+## Resize FS
+
+```sh
+growpart /dev/xvda 1  # Grows the partition; note the space
+resize2fs /dev/xvda1  # Grows the filesystem
+```
+
 ## Audio
 
 <https://forum.qt.io/topic/101103/yocto-qt5-alsa-raspberrypi-usb-audio/6>
@@ -346,8 +372,8 @@ Odvojeno folder i playlist view.
 
 - Počni u `root_music_directory` folderu.
 - Mijenjaj `music_directory` direktorij.
-- Stavi `<--` strelicu za povratak u zadnji folder.
-- Nema strelice u `root_music_directory` folderu.
+- Stavi `..` za povratak u zadnji folder.
+- Nema `..` u `root_music_directory` folderu.
 
 ### Playlist view
 

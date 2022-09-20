@@ -2,27 +2,29 @@
 
 This is a usage manual and behaviour overview of the entire unit.
 
-# Disclaimer
+## Disclaimer
 
-This Unit has only been tested on one car - mine (a 2004 Peugeot 206 with an RD3 radio and a type B small one line lcd display), and thus only the features I can test have been implemented.
+This Unit has only been tested on one car - mine (a 2004 Peugeot 206 with an RD3 radio and a type A lcd display), and thus only the features I can test have been implemented.
 
 ## Prerequisites
 
-Since the unit emulates a CD changer, it must be enabled.  
+This unit relies on the original radio and display being present.
+
+Since the unit emulates a CD changer, it must be enabled in the BSI.  
 If it's not enabled, the unit will still function, but only as a glorified display. There will be no audio output.
 
 ### Enabling the CD changer
 
 If the car had a CD changer fitted at some point, then it's already enabled.
 
-The CD changer must be enabled though diagnostics software. You can either order a Lexia cable and get hold of Peugeot Planet or Diagbox, find someone who has it, or go to a dealer and ask to have it enabled.
+The CD changer must be enabled though diagnostics software. You can either order a Lexia cable and get a hold of Peugeot Planet or Diagbox, find someone who has it, or go to a dealer and ask to have it enabled.
 
 # Connecting the unit
 
 The unit connects to an original VAN based headunit such as an RD3 radio in place of the CD changer.
 
 BEFORE connecting, verify that pins 17 and 16 have power, and that pin 15 is ground.  
-If the car has been off for some time, pin 17 may not be powered.
+If the car has been turned off for some time, pin 17 may not be powered.
 
 ![Connection schematic](images/diagram.png "Diagram for connecting the unit")
 
@@ -93,7 +95,7 @@ As of yet, there is no storage system on the Raspberry, so all the settings are 
 
 The OS doesn't have its own updater yet, so in order to update the OS, a whole reflash is required.
 
-The app can be updated manually without reflashing, but it involves connecting the Pi to the network and sending the program over ssh. That can be done via ethernet or WiFi. The program binary is located in `/opt/psa-app/bin/psa-app`.
+The app can be updated manually without reflashing, but it involves connecting the Pi to the network and sending the program over ssh. That can be done via ethernet. The program binary is located in `/opt/psa-app/bin/psa-app`.
 
 ## Power on behaviour
 

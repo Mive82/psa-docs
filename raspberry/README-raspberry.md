@@ -16,6 +16,6 @@ All customization was done in a custom `meta-psa` layer. This layer contains the
 
 ## GUI App
 
-The GUI App, also named `PSA App` is written using Qt 5. The raspberry doesn't have a window manager, so it's rendering a fullscreen using `eglfs`. The app is structured around tabs, where each tab shows a customized widget. Each widget is self contained, and only aware of itself. Additional information is communicated to the widget from the Main window using signals and slots.
+The GUI App, also named `PSA App` is written using Qt 5. The raspberry doesn't have a window manager, so it's rendering a fullscreen window using `eglfs`. The app is structured around tabs, where each tab shows a customized widget. Each widget is self contained, and only aware of itself. Additional information is communicated to the widget from the Main window using signals and slots.
 
 For additional information, consult the code.
