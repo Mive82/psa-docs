@@ -84,7 +84,7 @@ Nope, will have to reposition it, as software won't be running all the time.
 ### Pinout
 
 | Pin | Function | Notes              |
-|-----|----------|--------------------|
+| --- | -------- | ------------------ |
 | 3   | GND      |                    |
 | 4   | LED      | 5V I guess         |
 | 6   | Button   | Acts as a pulldown |
@@ -136,6 +136,8 @@ Cd Changer commands
 
 Len 2
 
+This message should be ACK-ed.
+
 ## Iden 0x8C4
 
 Radio button reports
@@ -185,7 +187,6 @@ Request to keep +VAN alive
 
 <http://pinterpeti.hu/psavanbus/PSA-VAN.html#5E4>
 
-
 # General notes
 
 ## Packet reading
@@ -218,7 +219,7 @@ Every time a gear changers, wait one second. If the value stays, change the disp
 Idea is to collect all relevant information and generalize it into one 'car state`.
 
 | State                    | Description                                                         | Raspberry behaviour                                             |
-|--------------------------|---------------------------------------------------------------------|-----------------------------------------------------------------|
+| ------------------------ | ------------------------------------------------------------------- | --------------------------------------------------------------- |
 | `PSA_STATE_CAR_SLEEP`    | Car in sleep mode (VAN+ is off)                                     | Turned off (no power to VAN+).                                  |
 | `PSA_STATE_ECONOMY_MODE` | Car is in Eco mode (battery saving). Reset when engine is turned on | Turned off.                                                     |
 | `PSA_STATE_CAR_LOCKED`   | Car off and locked, but not in sleep mode yet                       | Turned off.                                                     |

@@ -2,6 +2,8 @@
 
 Communication API between an ESP32 and a Raspberry Pi for the Peugeot infotainment Project.
 
+Implementation example can be found in the [gui app](https://github.com/Mive82/psa-app).
+
 # Overview
 
 The libPSA API facilitates the communication between an ESP32 and a Raspberry Pi connected over UART.

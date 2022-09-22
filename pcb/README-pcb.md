@@ -4,11 +4,11 @@ This is a brief overview of the PCB used for the Peugeot Infotainment project.
 
 This is version 1 of the PCB, and some functionality is missing
 
-## Form factor
+### Form factor
 
 The PCB was designed as a Raspberry Pi HAT.
 
-## Function
+### Function
 
 The PCB contains all electronic components (except the power supply) necessary to read and write VAN packets.
 
@@ -35,9 +35,9 @@ See BOM
 
 ### Headers
 
-J1 - ESP power selector - Select how the ESP gets powered
-J2 - Permanent 12 Volt power input pin
-J3 - 5 volt input, ground and VAN data wires
+J1 - ESP power selector - Select how the ESP gets powered  
+J2 - Permanent 12 Volt power input pin  
+J3 - 5 volt input, ground and VAN data wires  
 J4 - LCD power output
 
 ### Power lines
