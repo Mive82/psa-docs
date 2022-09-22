@@ -11,6 +11,8 @@ Infotainment sustav napravljen sa Raspberry Pi računalom i ESP32 mikroupravlja�
 - TSS463C VAN bus driver
 - Custom-made PCB na kojem se sve smješteno
 
+[PCB Schematics repo](https://github.com/Mive82/psa-pcb)
+
 ## Software
 
 ### Raspberry Pi
@@ -22,12 +24,16 @@ Infotainment sustav napravljen sa Raspberry Pi računalom i ESP32 mikroupravlja�
   - USB media player
 - API za komunikaciju sa ESP posebno napisan u C.
 
+[GUI App repo](https://github.com/Mive82/psa-app)
+
 ### ESP
 
 - Korištena biblioteka za softversko primanje podataka sa VAN sabirnice.
 - Softver strukturiran kao API za odgovaranje na zahtjeve za podatke.
 - Upravlja paljenjem i gašenjem Raspberry Pi.
 - Simulira CD Changer slanjem VAN paketa pomoću TSS463C.
+
+[ESP Firmware repo](https://github.com/Mive82/psa_esp32)
 
 ## Komunikacija
 
@@ -39,6 +45,14 @@ Radi na način request - response, gdje Raspberry Pi šalje zahtjev (request) za
 ## GUI
 
 ![Screenshot 1](images/1-rpm.png)
+
+![Screenshot 2](images/2-musicplayer.png)
+
+![Screenshot 3](images/3-radiooff.png)
+
+![Screenshot 4](images/4-musicplaylistlist.png)
+
+![Screenshot 5](images/5-musicfolderlist.png)
 
 ## U autu
 
